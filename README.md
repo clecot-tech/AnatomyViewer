@@ -1,4 +1,5 @@
 # AnatomyViewer
+![CI](https://github.com/clecot-tech/AnatomyViewer/actions/workflows/ci.yml/badge.svg)
 
 A desktop 3D viewer for anatomical models (STL), written in C++20 with Qt 6 and OpenGL.
 
@@ -25,7 +26,7 @@ Requirements: CMake 3.24 or later, a C++20 compiler (MSVC or GCC), Qt 6.
 
 ## Roadmap
 
-- [ ] Milestone 1: project skeleton, unit tests, continuous integration (in progress)
+- [X] Milestone 1: project skeleton, unit tests, continuous integration (in progress)
 - [ ] Milestone 2: STL loading and display
 - [ ] Milestone 3: camera interaction
 - [ ] Milestone 4: measurement tool
