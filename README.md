@@ -16,6 +16,8 @@ Work in progress (see roadmap below).
 - `src/app`: Qt / OpenGL user interface
 - `tests`: unit tests for `core`
 
+Requirements and traceability: see [docs/requirements.md](docs/requirements.md).
+
 ## Build
 
 Requirements: CMake 3.24 or later, a C++20 compiler (MSVC or GCC), Qt 6.

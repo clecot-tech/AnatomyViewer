@@ -2,12 +2,12 @@
 
 #include "core/version.h"
 
-TEST(Version, ReturnsCurrentVersion)
+TEST(Req008, ReturnsCurrentVersion)
 {
-    EXPECT_EQ(anatomy::core::version(), "0.1.0");
+	EXPECT_EQ(anatomy::core::version(), "0.1.0");
 }
 
-TEST(Version, IsNotEmpty)
+TEST(Req008, IsNotEmpty)
 {
-    EXPECT_FALSE(anatomy::core::version().empty());
+	EXPECT_FALSE(anatomy::core::version().empty());
 }
