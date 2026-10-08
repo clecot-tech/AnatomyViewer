@@ -10,7 +10,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(googletest)
 
-add_executable(core_tests test_version.cpp)
+add_executable(core_tests test_version.cpp test_stl_loader.cpp)
 
 target_link_libraries(core_tests PRIVATE core GTest::gtest_main)
 
