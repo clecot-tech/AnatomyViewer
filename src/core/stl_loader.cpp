@@ -2,6 +2,7 @@
 #include <fstream>
 #include <optional>   // for std::optional
 #include <cstring>    // for std::memcpy
+#include <cmath>      // for std::isfinite
 
 namespace anatomy::core {
 
