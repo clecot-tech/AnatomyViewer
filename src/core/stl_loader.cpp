@@ -1,5 +1,7 @@
 #include "core/stl_loader.h"
 #include <fstream>
+#include <optional>   // for std::optional
+#include <cstring>    // for std::memcpy
 
 namespace anatomy::core {
 
