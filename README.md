@@ -28,8 +28,8 @@ Requirements: CMake 3.24 or later, a C++20 compiler (MSVC or GCC), Qt 6.
 
 ## Roadmap
 
-- [X] Milestone 1: project skeleton, unit tests, continuous integration (in progress)
-- [ ] Milestone 2: STL loading and display
+- [X] Milestone 1: project skeleton, unit tests, continuous integration
+- [ ] Milestone 2: STL loading and display (in progress)
 - [ ] Milestone 3: camera interaction
 - [ ] Milestone 4: measurement tool
 - [ ] Milestone 5: requirements traceability (requirements to tests)
