@@ -21,7 +21,8 @@ namespace {
 Triangle makeTriangle()
 {
     return Triangle{Vec3{0.0f, 0.0f, 1.0f},
-                    {{Vec3{0.0f, 0.0f, 0.0f}, Vec3{1.0f, 0.0f, 0.0f}, Vec3{0.0f, 1.0f, 0.0f}}}};
+                    {{Vec3{0.0f, 0.0f, 0.0f}, Vec3{1.0f, 0.0f, 0.0f}, Vec3{0.0f, 1.0f, 0.0f}}},
+                    0u};
 }
 
 Triangle makeTriangleWithNaN()
@@ -29,7 +30,8 @@ Triangle makeTriangleWithNaN()
     return Triangle{
         Vec3{0.0f, 0.0f, 1.0f},
         {{Vec3{0.0f, 0.0f, 0.0f}, Vec3{1.0f, 0.0f, std::numeric_limits<float>::quiet_NaN()},
-          Vec3{0.0f, 1.0f, 0.0f}}}};
+          Vec3{0.0f, 1.0f, 0.0f}}},
+            0u};
 }
 
 std::vector<Triangle> makeTriangles(std::uint32_t count)
@@ -161,6 +163,8 @@ TEST(Req002, RejectsCorruptedData)
 
 TEST(Req002, RejectsHugeCountWithoutAllocating)
 {
-    // The file claims 1 triangle but contains two: inconsistent size.
-    expectError(parseBinaryStl(makeBinaryStl({makeTriangles(0xFFFFFFFF)}, 0xFFFFFFFE)), StlError::SizeMismatch);
+    // Only 84 bytes (header + count), but the count claims about 4 billion triangles.
+    // The parser must compare sizes first and reject the file without allocating anything.
+    const auto bytes = makeBinaryStl({}, 0xFFFFFFFF);
+    expectError(parseBinaryStl(bytes), StlError::SizeMismatch);
 }
