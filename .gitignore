@@ -70,3 +70,4 @@ Testing/
 
 # IDE environment
 .vs
+CppProperties.json

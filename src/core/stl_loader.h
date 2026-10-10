@@ -6,6 +6,7 @@
 #include <span>
 #include <variant>
 #include <vector>
+#include <cstdint>
 
 namespace anatomy::core {
 
@@ -24,7 +25,7 @@ struct Triangle
 {
     Vec3 normal; 
     std::array<Vec3, 3> vertices;
-    uint16_t attribute;
+    std::uint16_t attribute;
 };
 
 struct Mesh
